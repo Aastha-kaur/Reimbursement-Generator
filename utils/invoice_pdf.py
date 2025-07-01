@@ -57,5 +57,6 @@ def generate_invoice_pdf(data):
     story.append(bank_table)
 
     doc.build(story)
+    pdf_canvas.save()
     buffer.seek(0)
     return buffer
