@@ -1,3 +1,4 @@
+from io import BytesIO
 import streamlit as st
 from utils.data_loader import get_merged_reimbursements
 from utils.invoice_pdf import generate_invoice_pdf
@@ -26,11 +27,12 @@ def show_invoice_generator():
     st.write(f"**Distance:** {visit.get('distance', 'N/A')} km")
     st.write(f"**Claimed Amount:** ${visit.get('total_reimbursement', 0.00):.2f}")
 
-    if st.button("🧾 Generate Invoice PDF"):
-        pdf = generate_invoice_pdf(visit)
-        st.download_button(
-            label="📥 Download Invoice",
-            data=pdf,
-            file_name=f"invoice_{visit['visit_id']}.pdf",
-            mime="application/pdf"
-        )
+     # 🔧 Generate invoice PDF as a BytesIO stream and download in one step
+    pdf_buffer = generate_invoice_pdf(visit)
+
+    st.download_button(
+        label="📥 Download Invoice PDF",
+        data=pdf_buffer,
+        file_name=f"invoice_{visit['visit_id']}.pdf",
+        mime="application/pdf"
+    )
