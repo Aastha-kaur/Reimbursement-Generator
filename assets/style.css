@@ -1,0 +1,87 @@
+/* style.css */
+
+body {
+    background-color: #F4F2F1;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+    color: #1E1B47; /* ARA Navy */
+    font-weight: 600;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #F4F2F1;
+    border-right: 1px solid #DDD;
+}
+
+/* Buttons */
+.stButton > button {
+    background-color: #294B9D; /* ARA Ocean Blue */
+    color: white;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border: none;
+}
+
+.stButton > button:hover {
+    background-color: #1E1B47; /* ARA Navy */
+    transition: 0.3s ease-in-out;
+}
+
+/* Metrics and cards */
+.metric-box {
+    background: linear-gradient(135deg, #AB4D9C, #F89623); /* Purple to Orange */
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.metric-box h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.metric-box p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Expander styling */
+details {
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+}
+
+/* Tables */
+thead tr {
+    background-color: #4CC5DD; /* Light Blue */
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Links */
+a {
+    color: #294B9D;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
